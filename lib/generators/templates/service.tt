@@ -1,0 +1,5 @@
+class <%= file_name.camelcase %>Service
+  def self.call
+    # add service logic here
+  end
+end
