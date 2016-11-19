@@ -13,4 +13,11 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
     assert_file 'app/services/send_user_email_service.rb', %r{SendUserEmailService}
     assert_file 'test/services/send_user_email_service_test.rb', %r{SendUserEmailServiceTest}
   end
+
+  test 'service template files can be nested' do
+    run_generator %w(account:send_user_email)
+
+    assert_file 'app/services/account/send_user_email_service.rb', %r{Account::SendUserEmailService}
+    assert_file 'test/services/account/send_user_email_service_test.rb', %r{Account::SendUserEmailServiceTest}
+  end
 end
