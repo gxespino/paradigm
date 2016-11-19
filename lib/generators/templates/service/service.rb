@@ -1,4 +1,4 @@
-class <%= file_name.camelcase %>Service
+class <%= service_name.camelcase %>Service
   include Service
 
   def call

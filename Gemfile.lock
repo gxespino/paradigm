@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paradigm (0.1.1)
+    paradigm (0.1.2)
       railties
 
 GEM
