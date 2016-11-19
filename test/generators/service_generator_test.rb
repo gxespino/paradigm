@@ -7,7 +7,7 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
   destination File.join(Rails.root, 'tmp')
   setup :prepare_destination
 
-  test 'service file is created' do
+  test 'service template files are created' do
     run_generator %w(send_user_email)
 
     assert_file 'app/services/send_user_email_service.rb', %r{SendUserEmailService}

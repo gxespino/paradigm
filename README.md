@@ -12,12 +12,18 @@ gem 'paradigm'
 
 Run `bundle install`
 
+Next, you need to run the generator:
+
+```
+rails generate paradigm:install
+```
+
 ## Generators
 
 ### Services
 
 ```
-rails g paradigm:service user_creation
+rails generate paradigm:service user_creation
 ```
 
 Sets up a `app/services` directory with a `user_creation_service.rb` file. Also adds a `user_creation_service_test.rb` file in your test directory.
