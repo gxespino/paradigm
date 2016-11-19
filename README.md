@@ -1,4 +1,7 @@
-# Paradigm
+[![Version](https://img.shields.io/badge/gem-v0.1.1-blue.svg)](https://rubygems.org/gems/paradigm)
+[![Rating ](https://img.shields.io/badge/rating-100%2F5-brightgreen.svg)](https://rubygems.org/gems/paradigm)
+
+# Paradigm: abstractions so good you'll cry
 
 Easily add Service abstractions into your Rails app with template generators
 
