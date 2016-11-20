@@ -1,4 +1,4 @@
-class <%= @path[0].camelcase %>::<%= @path[1].camelcase %>Service
+class <%= scope.camelcase %>::<%= service_name.camelcase %>Service
   include Service
 
   def call

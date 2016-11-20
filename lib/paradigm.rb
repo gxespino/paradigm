@@ -1,0 +1,3 @@
+module Paradigm
+
+end

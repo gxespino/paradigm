@@ -1,11 +1,13 @@
 require 'test_helper'
-require 'generators/paradigm/install_generator'
 
 class InstallGeneratorTest < Rails::Generators::TestCase
   tests Paradigm::Generators::InstallGenerator
 
   destination File.join(Rails.root, 'tmp')
-  setup :prepare_destination
+
+  setup do
+    prepare_destination
+  end
 
   test 'service module is created' do
     run_generator

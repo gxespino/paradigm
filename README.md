@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/gem-v0.1.2-blue.svg)](https://rubygems.org/gems/paradigm)
+[![Version](https://img.shields.io/badge/gem-v0.1.3-blue.svg)](https://rubygems.org/gems/paradigm)
 [![Rating ](https://img.shields.io/badge/rating-100%2F5-brightgreen.svg)](https://rubygems.org/gems/paradigm)
 
 # Paradigm: abstractions so good you'll cry
@@ -36,7 +36,7 @@ Sets up a `app/services` directory with a `user_creation_service.rb` file. Also 
 #### Nested services
 
 ```
-rails generate paradigm:service account:user_creation
+rails generate paradigm:service account::user_creation
 ```
 
 Sets up a `app/services/account` directory with a `user_creation_service.rb` file. Also adds a `user_creation_service_test.rb` file in the `test/services/account` directory.
