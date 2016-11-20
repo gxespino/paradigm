@@ -1,17 +1,19 @@
 require 'test_helper'
-require 'generators/paradigm/service_generator'
 
 class ServiceGeneratorTest < Rails::Generators::TestCase
   tests Paradigm::Generators::ServiceGenerator
 
   destination File.join(Rails.root, 'tmp')
-  setup :prepare_destination
+
+  setup do
+    prepare_destination
+  end
 
   test 'service template files are created' do
-    run_generator %w(send_user_email)
+    run_generator %w(send_confirmation)
 
-    assert_file 'app/services/send_user_email_service.rb', %r{SendUserEmailService}
-    assert_file 'test/services/send_user_email_service_test.rb', %r{SendUserEmailServiceTest}
+    assert_file 'app/services/send_confirmation_service.rb', %r{SendConfirmationService}
+    assert_file 'test/services/send_confirmation_service_test.rb', %r{SendConfirmationServiceTest}
   end
 
   test 'service template files can be nested' do
@@ -21,14 +23,10 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
     assert_file 'test/services/account/send_user_email_service_test.rb', %r{Account::SendUserEmailServiceTest}
   end
 
-  # test 'double semicolons will raise an error' do
-  #   stderr = capture(:stderr) do
-  #     run_generator %w(payment::refund_user_payment)
-  #   end
+  test 'single semicolons will also nest services' do
+    run_generator %w(payment:refund_user_payment)
 
-  #   assert_match %r{Invalid argument syntax}, stderr
-
-  #   assert_no_file 'app/services/payment/refund_user_payment_service.rb'
-  #   assert_no_file 'test/services/payment/refund_user_payment_service_test.rb'
-  # end
+    assert_file 'app/services/payment/refund_user_payment_service.rb', %r{Payment::RefundUserPaymentService}
+    assert_file 'test/services/payment/refund_user_payment_service_test.rb', %r{Payment::RefundUserPaymentServiceTest}
+  end
 end
